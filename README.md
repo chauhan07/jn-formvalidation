@@ -56,7 +56,7 @@ npm install jn-form-validation
    </form>
    ```
 
-3. Add an event listener to validate the form:
+3. Add following css for error messages:
    ```css
    .jn-error-wrap > .jn-error-message{
         background: #c44106;
