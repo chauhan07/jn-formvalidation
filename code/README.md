@@ -1,239 +1,136 @@
-<!-- ab email ki further validation ka option dena hai ki kis kis domain ke sath hi valid ho 
-jn-input-wrap bhi instance me pass karna hia and upar se hatana hai 
-values fill hote hi error remove ho jaye 
-date  ke liye validation ki kab se kab tak ki date valid ho sake  -->
+# JN Form Validation
 
+## Overview
+The **JN Form Validation** library is designed to simplify the process of validating HTML forms. It supports various input types, including text, email, password, number, and more. The library ensures that users enter valid data into forms and displays error messages or highlights invalid fields as needed.
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Home Page | Boom My Events</title>
+---
 
-    <link rel="stylesheet" href="./assets/css/theme-style.css" />
-  </head>
+## Features
+- Supports multiple input types: `text`, `email`, `password`, `tel`, `checkbox`, `radio`, `select`, and `textarea`.
+- Customizable error messages.
+- Easy integration into any project.
+- Lightweight and efficient.
+- Fully customizable for advanced use cases.
 
-  <body>
-    <!-- This form validation script is very easy to use. Simply pass a specific class to your form elements, and watch the magic happen. 
-    Here are the steps and conditions for proper validation:
+---
 
-    1. Wrapper Class:
-        - Wrap all your form fields in a `div` or `label`. We prefer label for better output.
-        - Assign the class `jn-input-wrap` to these wrappers.
+## Installation
 
-    2. Field-Specific Conditions:
-        - Text, Search, Color, Select Fields:
-            - These fields are checked for non-emptiness. If any of these fields are empty, an error will be displayed.
-        - Checkbox and Radio Fields:
-            - Errors will be shown if these fields are not checked.
-            - Note: For `input:radio` and `input:checkbox`, the `name` attribute is mandatory since validation is based on the name attribute.
-        - Phone Number:
-            - The phone number field must be exactly 10 digits long.
-            - The field must not be empty.
-        - Email:
-            - The email field requires a valid email address format.
-            - The email must include an '@' symbol and a domain (e.g., example.com).
-        - URL:
-            - The URL field must contain a proper URL, starting with 'https'.
+<!-- ### Using npm (Recommended)
+```bash
+npm install jn-form-validation
+``` -->
 
-    3. General Note:
-        - Make sure that each field is correctly wrapped and the `jn-input-wrap` class is applied to ensure the validation works as expected.
+### Manual Integration
+1. Download the library from the repository.
+2. Include the `jn-form-validation.js` file in your HTML:
+   ```html
+   <script src="path/to/jn-form-validation.js"></script>
+   ```
 
-    By following these guidelines, you can ensure that your form fields are validated correctly, providing a seamless user experience. -->
+---
 
-    <h1 style="text-align: center">Form Validation</h1>
+## Usage
 
-    <section>
-      <div class="container">
-        <form action="" class="jnForm">
-          <label class="jn-input-wrap w-50">
-            <input type="text" placeholder="Name" />
-          </label>
+### Basic Setup
+1. Create an instance of the `JNFormValidation` class:
+   ```javascript
+   const formValidator = new JNFormValidation({
+       formClass: 'validate-me',
+       showErrorMessages: true
+   });
+   ```
 
-          <label class="jn-input-wrap w-50">
-            <input type="email" placeholder="Email" />
-          </label>
+2. Add the `validate-me` class to your HTML form:
+   ```html
+   <form class="validate-me">
+      <label class="jn-input-wrap">
+       <input type="text" name="username" required>
+      </label>
+      <label class="jn-input-wrap">
+       <input type="email" name="email" required>
+      </label>
+      <label class="jn-input-wrap">
+       <button type="submit">Submit</button>
+      </label>
+   </form>
+   ```
 
-          <label class="jn-input-wrap w-50">
-            <input type="tel" placeholder="Phone" />
-          </label>
+3. Add an event listener to validate the form:
+   ```javascript
+   document.querySelector('.validate-me').addEventListener('submit', function(event) {
+       if (!formValidator.validateForm(this)) {
+           event.preventDefault();
+           alert('Please fix the errors before submitting.');
+       }
+   });
+   ```
 
-          <label class="jn-input-wrap w-50">
-            <input type="number" placeholder="Number"/>
-          </label>
+---
 
-          <label class="jn-input-wrap w-50">
-            <input type="password" placeholder="Password"/>
-          </label>
+## Options
+The `JNFormValidation` class accepts an options object to customize its behavior:
 
-          <label class="jn-input-wrap w-50">
-            <input type="search" placeholder="Search"/>
-          </label>
+| Option             | Type    | Default | Description                                      |
+|--------------------|---------|---------|--------------------------------------------------|
+| `formClass`        | String  | `''`    | CSS class name for the forms to validate.        |
+| `showErrorMessages`| Boolean | `true`  | Whether to show error messages for invalid fields.|
+| `errorMessages`    | Object  | `{}`    | Custom error messages for specific field types.  |
 
-          <label class="jn-input-wrap w-50">
-            <select name="" id="" type="select-one">
-              <option value="">One</option>
-              <option value="1">Two</option>
-              <option value="2">three</option>
-            </select>
-          </label>
+### Default Error Messages
+```javascript
+const defaultErrorMessages = {
+    email: "Please enter a valid email address.",
+    text: "Please enter some text.",
+    password: "Please enter a valid password.",
+    tel: "Please enter a valid phone number.",
+    number: "Please enter a valid number.",
+    checkbox: "This option must be checked.",
+    radio: "Please select an option.",
+    select: "Please select an option.",
+    textarea: "Please enter some text.",
+    file: "Please upload a valid file."
+};
+```
 
-          <label class="jn-input-wrap w-50">
-            <input type="url" placeholder="URL" />
-          </label>
+---
 
-          <label class="jn-input-wrap w-33">
-            <input type="color" placeholder="Color" />
-          </label>
+## Advanced Usage
+### Custom Error Handling
+You can override the default error messages by passing a custom `errorMessages` object:
+```javascript
+const formValidator = new JNFormValidation({
+    errorMessages: {
+        email: "Invalid email format.",
+        password: "Password must contain at least 8 characters."
+    }
+});
+```
 
-          <label class="jn-input-wrap w-33">
-            <input type="date" placeholder="Date" />
-          </label>
+---
 
-          <label class="jn-input-wrap w-33">
-            <input type="time" placeholder="Time" />
-          </label>
+## License
+This library is open-source and licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
-          
-          <label class="jn-input-wrap w-50">
-            <input type="month" placeholder="Date" />
-          </label>
+---
 
-          <label class="jn-input-wrap w-50">
-            <input type="week" placeholder="Time" />
-          </label>
+## Author
+**[Your Name]**  
+For inquiries or support, contact: [your.email@example.com]
 
-          <label class="jn-input-wrap w-50">
-            <input type="file" placeholder="File"/>
-            <div class="fileDesign">Upload Your File</div>
-          </label>
+---
 
-          <label class="jn-input-wrap w-50">
-            <textarea name="" id="" type="textarea"></textarea>
-          </label>
-          
-          <label class="jn-input-wrap w-100">
-            <input type="range" placeholder="Range" min="0" max="50" />
-          </label>
+## Version History
+| Version | Date       | Changes                                       |
+|---------|------------|-----------------------------------------------|
+| 1.0.0   | 2024-12-23 | Initial release with basic validation support.|
 
-          <label class="jn-input-wrap w-100">
-            <input type="checkbox" name="hobbies" />
-            This is Checkbox &nbsp;&nbsp;&nbsp;
-            <input type="checkbox" name="hobbies" />
-            This is Checkbox &nbsp;&nbsp;&nbsp;
-            <input type="checkbox" name="hobbies" />
-            This is Checkbox &nbsp;&nbsp;&nbsp;
-          </label>
+---
 
-          <label class="jn-input-wrap w-100">
-            <input type="radio" name="gender" /> Male &nbsp;&nbsp;&nbsp;
-            <input type="radio" name="gender" /> Female
-          </label>
+## Contribution
+Contributions are welcome! Please fork the repository, make your changes, and submit a pull request.
 
-          <label class="jn-input-wrap w-100">
-            <input type="submit" value="Submit" />
-          </label>
-        </form>
-      </div>
-    </section>
+---
 
-    <!-- <section>
-        <div class="container">
-          <form action="" class="jnForm">
-            <label class="jn-input-wrap w-50">
-              <input type="text" placeholder="Name" />
-            </label>
-  
-            <label class="jn-input-wrap w-50">
-              <input type="email" placeholder="Email" />
-            </label>
-  
-            <label class="jn-input-wrap w-50">
-              <input type="tel" placeholder="Phone" />
-            </label>
-  
-            <label class="jn-input-wrap w-50">
-              <input type="number" placeholder="Number"/>
-            </label>
-  
-            <label class="jn-input-wrap w-50">
-              <input type="password" placeholder="Password"/>
-            </label>
-  
-            <label class="jn-input-wrap w-50">
-              <input type="search" placeholder="Search"/>
-            </label>
-  
-            <label class="jn-input-wrap w-50">
-              <select name="" id="" type="select-one">
-                <option value="">One</option>
-                <option value="1">Two</option>
-                <option value="2">three</option>
-              </select>
-            </label>
-  
-            <label class="jn-input-wrap w-50">
-              <input type="url" placeholder="URL" />
-            </label>
-  
-            <label class="jn-input-wrap w-33">
-              <input type="color" placeholder="Color" />
-            </label>
-  
-            <label class="jn-input-wrap w-33">
-              <input type="date" placeholder="Date" />
-            </label>
-  
-            <label class="jn-input-wrap w-33">
-              <input type="time" placeholder="Time" />
-            </label>
-  
-            <label class="jn-input-wrap w-50">
-              <input type="file" placeholder="File"/>
-              <div class="fileDesign">Upload Your File</div>
-            </label>
-  
-            <label class="jn-input-wrap w-50">
-              <textarea name="" id="" type="textarea"></textarea>
-            </label>
-  
-            <label class="jn-input-wrap w-100">
-              <input type="checkbox" name="hobbies" />
-              This is Checkbox &nbsp;&nbsp;&nbsp;
-              <input type="checkbox" name="hobbies" />
-              This is Checkbox &nbsp;&nbsp;&nbsp;
-              <input type="checkbox" name="hobbies" />
-              This is Checkbox &nbsp;&nbsp;&nbsp;
-            </label>
-  
-            <label class="jn-input-wrap w-100">
-              <input type="radio" name="gender" /> Male &nbsp;&nbsp;&nbsp;
-              <input type="radio" name="gender" /> Female
-            </label>
-  
-            <label class="jn-input-wrap w-100">
-              <input type="submit" value="Submit" />
-            </label>
-          </form>
-        </div>
-      </section> -->
-
-    <!-- <script src="./assets/js/function.js"></script> -->
-    <script src="./assets/js/jn.formvalidation.js"></script>
-
-    <script>
-      
-        // Create an instance with nested objects
-        const jn_validation = new JnFormValidation({
-            showErrorMessages: true,
-            formClass: '.jnForm',
-            errorMessages: {
-                email: "Please enter a valid email addressdfsgfd.",
-                text: "Please enter some text.",
-            }
-        });
-
-    </script>
-  </body>
-</html>
+## Acknowledgments
+Thanks to all contributors and the open-source community for their support!
