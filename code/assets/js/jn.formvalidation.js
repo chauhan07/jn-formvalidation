@@ -1,3 +1,24 @@
+/*************************************/
+/*************************************/
+/*************************************/
+/*************************************/
+/************** JN FORM **************/
+/**************VALIDATION*************/
+/*************************************/
+/*************************************/
+/*************************************/
+/*************************************/
+
+/*
+ *   Version: 1.0.0                                                                 
+ *   Author: Aditya Chauhan                                                         
+ *   License: MIT                                                                   
+ *   Description: This script provides the validation logic for form fields such    
+ *   as email, password, text, and other input types. It highlights invalid         
+ *   fields and displays error messages accordingly.                                
+*/
+
+
 function _0x2be1() {
     const _0x439a3a = [
         "Please\x20enter\x20a\x20valid\x20month.",

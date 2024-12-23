@@ -1,3 +1,23 @@
+/*************************************/
+/*************************************/
+/*************************************/
+/*************************************/
+/************** JN FORM **************/
+/**************VALIDATION*************/
+/*************************************/
+/*************************************/
+/*************************************/
+/*************************************/
+
+/*
+ *   Version: 1.0.0                                                                 
+ *   Author: Aditya Chauhan                                                         
+ *   License: MIT                                                                   
+ *   Description: This script provides the validation logic for form fields such    
+ *   as email, password, text, and other input types. It highlights invalid         
+ *   fields and displays error messages accordingly.                                
+*/
+
 class JnFormValidation {
     constructor(options = {}) {
         // Set default values with nested objects
