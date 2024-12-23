@@ -1,0 +1,16 @@
+/* Error Message Design */
+.jn-error-wrap > .jn-error-message{
+  background: #c44106;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 15px;
+  border-radius: 0 0 5px 5px;
+  width: 100%;
+}
+
+.jn-error-wrap input:not([type="radio"]):not([type="checkbox"]),
+.jn-error-wrap select,
+.jn-error-wrap .fileDesign,
+.jn-error-wrap textarea {
+  border: 1px solid #c44106!important;
+}
