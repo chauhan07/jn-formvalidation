@@ -57,13 +57,22 @@ npm install jn-form-validation
    ```
 
 3. Add an event listener to validate the form:
-   ```javascript
-   document.querySelector('.validate-me').addEventListener('submit', function(event) {
-       if (!formValidator.validateForm(this)) {
-           event.preventDefault();
-           alert('Please fix the errors before submitting.');
-       }
-   });
+   ```css
+   .jn-error-wrap > .jn-error-message{
+        background: #c44106;
+        color: #fff;
+        font-size: 12px;
+        padding: 4px 15px;
+        border-radius: 0 0 5px 5px;
+        width: 100%;
+    }
+
+    .jn-error-wrap input:not([type="radio"]):not([type="checkbox"]),
+    .jn-error-wrap select,
+    .jn-error-wrap .fileDesign,
+    .jn-error-wrap textarea {
+        border: 1px solid #c44106!important;
+    }
    ```
 
 ---
@@ -134,4 +143,3 @@ Contributions are welcome! Please fork the repository, make your changes, and su
 
 ## Acknowledgments
 Thanks to all contributors and the open-source community for their support!
-
