@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Demo | JN Form Validation</title>
+
+    <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
+    <link href="./assets/code/prism/prism.css" rel="stylesheet">
+    <link href="./assets/code/line-number/line-number.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/theme-style.css">
+  </head>
+  <body>
+    <header class="inner_page">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-3 logo">
+                    <a href="./">
+                        <i>jn.formvalidation.js</i>
+                    </a>
+                </div>
+                <div class="col-12 col-md-9 d-flex justify-content-end align-items-center">
+                    <ul class="menu">
+                        <li>
+                            <a href="./index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./demo.html" class="active">
+                                Demos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./docs.html">
+                                Docs
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://cdn.jsdelivr.net/gh/chauhan07/jn-formvalidation/download/jn-formvalidation.js_1.0.0.zip" target="_blank">
+                                Download
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- inner banner -->
+    <section class="inner_banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="hdng">
+                        Basic Usage
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- usage info -->
+     <section class="usage_info">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="hdng">
+                        Overview
+                    </h3>
+                    <p class="desc">
+                        This page provides an easy-to-follow guide on integrating and using the library in your project. The library simplifies the process of adding robust validation to your web forms with minimal setup.
+
+                        <br><br>
+                        <strong>In this example, we demonstrate:</strong>
+
+                        <br/>
+                        1. Setting up a basic HTML form with input fields. <br/>
+                        2. Linking the library using a CDN. <br/>
+                        3. Initializing the validation function. <br/>
+                        4. Adding a touch of CSS to style the form validation messages.
+                    </p>
+                </div>
+                <div class="col-12 mt-5">
+                    <h3 class="hdng">
+                        CDN
+                    </h3>
+                    <p class="desc">
+                        To integrate the Core JavaScript Form Validation Library into your project, simply include the following CDN link in your HTML file. 
+                        <br>
+                        Add the script tag inside just before the closing &lt;body&gt; tag of your HTML file:
+                    </p>
+                    <div class="codeHere">
+                        <span class="function">
+                            <pre class="line-numbers">
+<code class="language-html">&lt;script src="https://cdn.jsdelivr.net/gh/chauhan07/jn-formvalidation/code/assets/js/jn.formvalidation.min.js" integrity="sha384-0aTmD/thF7EfghvOU7GHbVOB3Wh/xEAtStNX3he3TwOROvcn282xTvEJxYzx8++t" crossorigin="anonymous">&lt;/script>
+</code>
+                        </pre>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-12 mt-5">
+                    <h3 class="hdng">
+                        Setup
+                    </h3>
+                    <p class="desc">
+                        After linking the CDN, you need to initialize the form validation function to ensure that the form behaves as expected.
+                    </p>
+                    <div class="codeHere">
+                        <span class="function">
+                            <pre class="line-numbers">
+<code class="language-js">const jn_validation = new JnFormValidation({
+    showErrorMessages: true,
+    formClass: '.jnForm',
+});
+</code>
+                        </pre>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-12 mt-5">
+                    <h3 class="hdng">
+                        HTML
+                    </h3>
+                    <p class="desc">
+                        Basic HTML structure of a form for use with the Form Validation Library. Each input field is enclosed in a &lt;label&gt; tag, providing a clean and accessible structure.
+                        <br>
+                        The form itself is assigned the class jnForm, and each &lt;label&gt; tag is given the class jn-input-wrap to ensure consistent styling and easy integration with the validation library. 
+                    </p>
+                    <div class="codeHere">
+                        <span class="function">
+                            <pre class="line-numbers">
+<code class="language-html">&lt;form action="" class="jnForm">
+    &lt;label class="jn-input-wrap">
+        &lt;input type="text" name="" placeholder="Enter your name">
+    &lt;/label>
+    &lt;label class="jn-input-wrap">
+        &lt;input type="email" name="" placeholder="Enter your email">
+    &lt;/label>
+    &lt;label class="jn-input-wrap">
+        &lt;input type="tel" name="" placeholder="Enter your phone number">
+    &lt;/label>
+    &lt;label class="jn-input-wrap">
+        &lt;textarea name="" placeholder="Enter you message">&lt;/textarea>
+    &lt;/label>
+    &lt;label class="jn-input-wrap">
+        &lt;input type="submit" value="Submit">
+    &lt;/label>
+&lt;/form>
+</code>
+                        </pre>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-12 mt-5">
+                    <h3 class="hdng">
+                        CSS
+                    </h3>
+                    <p class="desc">
+                        We provide a basic CSS structure for styling error messages. The error messages are displayed when a user submits a form with invalid or missing information. You can customize the CSS to match your theme and design preferences.
+                    </p>
+                    <div class="codeHere">
+                        <span class="function">
+                            <pre class="line-numbers">
+<code class="language-css">/* Error Message Design */
+.jn-error-wrap > .jn-error-message
+{
+    background: #c44106;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 15px;
+    border-radius: 0 0 5px 5px;
+    width: 100%;
+}
+
+.jn-error-wrap input:not([type="radio"]):not([type="checkbox"]),
+.jn-error-wrap select,
+.jn-error-wrap .fileDesign,
+.jn-error-wrap textarea 
+{
+    border: 1px solid #c44106!important;
+}
+</code>
+                        </pre>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Aditya Chauhan 
+                        <a href="https://www.instagram.com/ad1tya.rana" target="_blank">
+                            <img src="./assets/img/instagram.png" alt="">
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="./assets/js/obfuscated.js"></script>
+    <script src="./assets/code/prism/prism.js"></script>
+    <script src="./assets/code/line-number/line-number.js"></script>
+    <script src="./assets/js/function.js"></script>
+
+
+  </body>
+</html>

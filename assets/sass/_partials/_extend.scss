@@ -1,0 +1,5 @@
+%desc_font_size {
+    @include jn-standalone((
+        font-size: (14px, null, 15px, null, 16px, null),
+    ), min);
+}
