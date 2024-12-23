@@ -116,7 +116,7 @@ This library is open-source and licensed under the [MIT License](https://opensou
 
 ## Author
 **[Your Name]**  
-For inquiries or support, contact: [your.email@example.com]
+For inquiries or support, contact: [adityachauhan808@gmail.com]
 
 ---
 
