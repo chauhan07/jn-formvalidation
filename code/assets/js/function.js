@@ -18,6 +18,12 @@
  *   fields and displays error messages accordingly.                                
 */
 
+console.log(
+    "%cJN Form Validation by Aditya Chauhan",
+    "background: #0a383f; color: #ffffff; display: block;padding:5px 15px;border-radius:7px"
+);
+
+
 class JnFormValidation {
     constructor(options = {}) {
         // Set default values with nested objects
