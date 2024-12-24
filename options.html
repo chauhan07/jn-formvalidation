@@ -65,111 +65,113 @@
 
     <!-- usage info -->
     <section class="docs_box">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-8 col-lg-9">
-                <div class="col-12 pe-md-5">
-                    <h3 class="hdng">
-                        Options
-                    </h3>
-                    <p class="quote_desc">
-                        List including all options
-                    </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-8 col-lg-9">
+                    <div class="col-12 pe-md-5">
+                        <h3 class="hdng">
+                            Options
+                        </h3>
+                        <p class="quote_desc">
+                            List including all options
+                        </p>
 
 
-                    <div class="options">
-                        <h4 class="opt_hdng">
-                            showErrorMessages
-                        </h4>
-                        <p class="optionVal">
-                            <span>Type: <code>Bolean</code></span>
-                            <span>Default: <code>True</code></span>
-                        </p>
-                    </div>
-                    <div class="options">
-                        <h4 class="opt_hdng">
-                            formClass
-                        </h4>
-                        <p class="optionVal">
-                            <span>Type: <code>String</code></span>
-                            <span>Default: <code>.jnForm</code></span>
-                        </p>
-                    </div>
-                    <div class="options">
-                        <h4 class="opt_hdng">
-                            errorMessages
-                        </h4>
-                        <p class="optionVal">
-                            <span>Type: <code>Object</code></span>
-                            <span>Default: <code>Empty Object</code></span>
+                        <div class="options">
+                            <h4 class="opt_hdng">
+                                showErrorMessages
+                            </h4>
+                            <p class="optionVal">
+                                <span>Type: <code>Bolean</code></span>
+                                <span>Default: <code>True</code></span>
+                            </p>
+                            <small class="mt-3 d-inline-block">The value of <code>showErrorMessages</code> should be set to true if you want to display validation messages for each field. If you only want to show a red outline without displaying error messages, then set "showErrorMessages" to false. In this case, error messages will not be displayed, and only a red outline will appear around each field.</small>
+                        </div>
+                        <div class="options">
+                            <h4 class="opt_hdng">
+                                formClass
+                            </h4>
+                            <p class="optionVal">
+                                <span>Type: <code>String</code></span>
+                                <span>Default: <code>.jnForm</code></span>
+                            </p>
+                            <small class="mt-3 d-inline-block">You can assign any class of your choice to the form using the <code>formClass</code>. However, the same class must also be used in the form tag. This means that the class assigned to the form tag should be passed to <code>formClass</code>. Otherwise, form validation will not work. </small>
+                        </div>
+                        <div class="options">
+                            <h4 class="opt_hdng">
+                                errorMessages
+                            </h4>
+                            <p class="optionVal">
+                                <span>Type: <code>Object</code></span>
+                                <span>Default: <code>Empty Object</code></span>
 
-                            <small>Object containing error messages for all fields.</small>
-                        </p>
-                    </div>
-                    <div class="options">
-                        <h4 class="opt_hdng">
-                            errorMessages
-                        </h4>
-                        <small>By default, the following error messages will be displayed when the form validation fails. However, if you want to customize them according to your preferences, you can modify the errorMessages object. All error messages will be stored in "errorMessages" object, and the library will automatically use them for displaying the relevant messages.</small>
-                        <br>
-                        <br>
-                        <p class="optionVal">
-                            <span class="function">
-                        <pre class="line-numbers">
-<code class="language-css">errorMessages = {
-email: "Please enter a valid email address.",
-text: "Please enter some text.",
-password: "Please enter a valid password.",
-tel: "Please enter a valid phone number.",
-number: "Please enter a valid number.",
-checkbox: "This option must be checked.",
-radio: "Please select an option.",
-select: "Please select an option.",
-textarea: "Please enter some text.",
-file: "Please upload a valid file.",
-search: "Please type for search",
-url: "Please enter a valid url",
-date: "Please enter a valid date.",
-time: "Please enter a valid time.",
-datetimeLocal: "Please enter a valid date and time.",
-month: "Please enter a valid month.",
-week: "Please enter a valid week.",
-range: "Please enter a valid range.",
-color: "Please select a color."
-};
-</code>
-                    </pre>
-                    </span>
-                        </p>
+                                <small>Object containing error messages for all fields.</small>
+                            </p>
+                        </div>
+                        <div class="options">
+                            <h4 class="opt_hdng">
+                                Error Messages
+                            </h4>
+                            <small>By default, the following error messages will be displayed when the form validation fails. However, if you want to customize them according to your preferences, you can modify the errorMessages object. All error messages will be stored in "errorMessages" object, and the library will automatically use them for displaying the relevant messages.</small>
+                            <br>
+                            <br>
+                            <p class="optionVal">
+                                <span class="function">
+                            <pre class="line-numbers">
+    <code class="language-css">errorMessages = {
+        email: "Please enter a valid email address.",
+        text: "Please enter some text.",
+        password: "Please enter a valid password.",
+        tel: "Please enter a valid phone number.",
+        number: "Please enter a valid number.",
+        checkbox: "This option must be checked.",
+        radio: "Please select an option.",
+        select: "Please select an option.",
+        textarea: "Please enter some text.",
+        file: "Please upload a valid file.",
+        search: "Please type for search",
+        url: "Please enter a valid url",
+        date: "Please enter a valid date.",
+        time: "Please enter a valid time.",
+        datetimeLocal: "Please enter a valid date and time.",
+        month: "Please enter a valid month.",
+        week: "Please enter a valid week.",
+        range: "Please enter a valid range.",
+        color: "Please select a color."
+    };
+    </code>
+                        </pre>
+                        </span>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-4 col-lg-3">
-                <div class="position-sticky" style="top: 25px;">
-                    <h4 class="sideBar_hdng">
-                        Get Started
-                    </h4>
-                    <ul class="sidebar_menu">
-                        <li>
-                            <a href="./docs.html">Welcome</a>
-                        </li>
-                        <li>
-                            <a href="./installation.html">Installation</a>
-                        </li>
-                        <li>
-                            <a href="./options.html" class="active">Options</a>
-                        </li>
-                        <!-- <li>
-                            <a href="./faq.html">FAQ</a>
-                        </li>
-                        <li>
-                            <a href="./contact.html">Contact</a>
-                        </li> -->
-                    </ul>
+                <div class="col-12 col-md-4 col-lg-3">
+                    <div class="position-sticky" style="top: 25px;">
+                        <h4 class="sideBar_hdng">
+                            Get Started
+                        </h4>
+                        <ul class="sidebar_menu">
+                            <li>
+                                <a href="./docs.html">Welcome</a>
+                            </li>
+                            <li>
+                                <a href="./installation.html">Installation</a>
+                            </li>
+                            <li>
+                                <a href="./options.html" class="active">Options</a>
+                            </li>
+                            <!-- <li>
+                                <a href="./faq.html">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="./contact.html">Contact</a>
+                            </li> -->
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </section>
 
     <!-- footer -->
