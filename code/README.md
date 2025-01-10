@@ -124,7 +124,7 @@ This library is open-source and licensed under the [MIT License](https://opensou
 ---
 
 ## Author
-**[Your Name]**  
+**Ady**  
 For inquiries or support, contact: [adityachauhan808@gmail.com]
 
 ---

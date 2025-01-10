@@ -16,22 +16,22 @@ header{
     z-index: 999;
     padding: 20px 0;
     &.active {
-        background: #4fd3df;
+        background: $clr_4e70cb;
         box-shadow: 0px 2px 10px #4040402e;
     }
     &.inner_page{
         position: sticky;
         left: unset;
         top: 0;
-        background-color: $clr_4fd3df;
+        background-color: $clr_4e70cb;
     }
     .logo{
         font-size: 24px;
         color: $clr_white;
         font-weight: 300;
         a{
-            color: $clr_white;
-            text-decoration: none
+            color: $clr_faff25;
+            text-decoration: none;
         }
     }
     .menu{
@@ -53,12 +53,12 @@ header{
                     right: 0;
                     bottom: -7px;
                     height: 1px;
-                    background-color: $clr_ff2550;
+                    background-color: $clr_faff25;
                     transition: 0.5s ease;
                     opacity: 0;
                 }
                 &.active, &:hover{
-                    color: $clr_ff2550;
+                    color: $clr_faff25;
                     &::before{
                         opacity: 1;
                     }
@@ -70,7 +70,7 @@ header{
 
 
 .main_banner{
-    background-color: $clr_4fd3df;
+    background-color: $clr_4e70cb;
     @include jn-standalone((
         padding: (120px 0 90px, null, null, null, 150px 0 120px , 180px 0 150px),
     ), min);
@@ -100,8 +100,8 @@ header{
             font-size: (14px, null , 17px, null , 20px , null),
         ), min);
         &:hover{
-            background-color: $clr_ff2550;
-            color: $clr_white;
+            background-color: $clr_faff25;
+            color: $clr_black;
         }
     }
     .ver{
@@ -124,13 +124,13 @@ header{
             input{
                 width: 100%;
                 height: 50px;
-                border: 1px solid $clr_ff255149;
+                border: 1px solid $clr_4e6fcb4b;
                 padding: 7px 15px;
             }
             textarea{
                 width: 100%;
                 height: 120px;
-                border: 1px solid $clr_ff255149;
+                border: 1px solid $clr_4e6fcb4b;
                 padding: 7px 15px;
             }
             input, textarea{
@@ -139,13 +139,13 @@ header{
                 }
             }
             input[type='submit']{
-                background-color: $clr_ff2550;
+                background-color: $clr_4e70cb;
                 color: $clr_white;
-                border: 1px solid $clr_ff2550;
+                border: 1px solid $clr_4e70cb;
                 transition: 0.5s ease;
                 &:hover{
                     background-color: $clr_white;
-                    color: $clr_ff2550;
+                    color: $clr_4e70cb;
                 }
             }
         }
@@ -194,7 +194,7 @@ header{
     ), min);
     p{
         text-align: center;
-        color: $clr_4fd3df;
+        color: $clr_4e70cb;
         font-weight: 300;
         em{
             text-decoration: underline;
@@ -213,7 +213,7 @@ footer{
             ('justify-content', center),
             ('align-items', center),
         );
-        color: $clr_4fd3df;
+        color: $clr_4e70cb;
         font-size: 18px;
         img{
             width: 25px;
@@ -267,7 +267,7 @@ footer{
         ), min);
     }
     .quote_desc{
-        border-left: 7px solid $clr_4fd3df;
+        border-left: 7px solid $clr_4e70cb;
         padding: 10px 20px;
         @include jn-standalone((
             font-size: (14px, null , 16px, null , 18px , null),
@@ -313,7 +313,7 @@ footer{
                 padding:12px 30px;
                 width: 100%;
                 &:hover, &.active{
-                    color: $clr_4fd3df;
+                    color: $clr_4e70cb;
                     background-color: #f6f6f6;
                 }
             }
